@@ -16,10 +16,10 @@ export default function Home() {
 		await authClient.signUp.email(
 			{ name, email, password },
 			{
-				onRequest: (ctx) => {
+				onRequest: () => {
 					//show loading
 				},
-				onSuccess: (ctx) => {
+				onSuccess: () => {
 					//redirect to the dashboard or sign in page
 					window.alert(
 						"Sign up successful! Please check your email to verify your account.",
@@ -37,10 +37,10 @@ export default function Home() {
 		await authClient.signIn.email(
 			{ email, password },
 			{
-				onRequest: (ctx) => {
+				onRequest: () => {
 					//show loading
 				},
-				onSuccess: (ctx) => {
+				onSuccess: () => {
 					//redirect to the dashboard or sign in page
 					window.alert("Sign in successful!")
 				},
