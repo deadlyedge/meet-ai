@@ -4,6 +4,7 @@ import { Noto_Serif } from "next/font/google"
 import { TRPCReactProvider } from "@/trpc/client"
 
 import "./globals.css"
+import { Toaster } from "@/components/ui/sonner"
 
 const notoSerif = Noto_Serif({
 	subsets: ["latin"],
@@ -24,7 +25,10 @@ export default function RootLayout({
 	return (
 		<TRPCReactProvider>
 			<html lang="en">
-				<body className={`${notoSerif.className} antialiased`}>{children}</body>
+				<body className={`${notoSerif.className} antialiased`}>
+					<Toaster />
+					{children}
+				</body>
 			</html>
 		</TRPCReactProvider>
 	)
