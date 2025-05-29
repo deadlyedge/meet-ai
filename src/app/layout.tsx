@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Noto_Serif } from "next/font/google"
 
+import { TRPCReactProvider } from "@/trpc/client"
+
 import "./globals.css"
 
 const notoSerif = Noto_Serif({
@@ -20,8 +22,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${notoSerif.className} antialiased`}>{children}</body>
-		</html>
+		<TRPCReactProvider>
+			<html lang="en">
+				<body className={`${notoSerif.className} antialiased`}>{children}</body>
+			</html>
+		</TRPCReactProvider>
 	)
 }
