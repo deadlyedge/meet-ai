@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/sonner"
 const notoSerif = Noto_Serif({
 	subsets: ["latin"],
 	variable: "--font-noto-serif",
-	weight: ["300", "700"],
+	weight: ["300", "500", "700"],
 })
 
 export const metadata: Metadata = {
