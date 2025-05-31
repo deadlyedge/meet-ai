@@ -3,19 +3,19 @@
 import type { ColumnDef } from "@tanstack/react-table"
 import { GeneratedAvatar } from "@/components/generated-avatar"
 
-import type { AgentGetOne } from "../../types"
+import type { AgentsGetMany } from "../../types"
 import { CornerDownRightIcon, VideoIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
-export const columns: ColumnDef<AgentGetOne>[] = [
+export const columns: ColumnDef<AgentsGetMany[number]>[] = [
 	{
 		accessorKey: "name",
 		header: "Agent Name",
 		cell: ({ row }) => (
-			<div>
-				<div>
+			<div className="flex flex-col gap-y-1">
+				<div className="flex items-center gap-x-2">
 					<GeneratedAvatar
 						variant="botttsNeutral"
 						seed={row.original.name}
